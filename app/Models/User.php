@@ -63,4 +63,12 @@ class User extends Authenticatable
     {
         return $this->image ? url('storage/' . $this->image) : null;
     }
+    public function canAccessPanel(Panel $panel): bool
+    {
+        if ($panel->getId() === 'super-admin') {
+            return str_ends_with($this->email, 'https://web-production-410b9.up.railway.app/admin');
+        }
+
+        return true;
+    }
 }
