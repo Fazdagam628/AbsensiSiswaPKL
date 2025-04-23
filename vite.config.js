@@ -12,6 +12,6 @@ export default defineConfig({
             //     'app/Livewire/**',
             // ],
         }),
-        tailwindcss(),
+        // tailwindcss(),
     ],
 });
