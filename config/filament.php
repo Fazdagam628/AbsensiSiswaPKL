@@ -97,5 +97,7 @@ return [
     */
 
     'system_route_prefix' => 'filament',
-
+    'base' => [
+        \Illuminate\Http\Middleware\TrustProxies::class,
+    ],
 ];

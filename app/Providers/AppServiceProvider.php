@@ -10,6 +10,7 @@ use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Dedoc\Scramble\Support\Generator\SecurityScheme;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -36,5 +37,8 @@ class AppServiceProvider extends ServiceProvider
         SecurityScheme::http('bearer');
         config(['app.locale' => 'id']);
         Carbon::setLocale('id');
+        if (app()->environment('production')) {
+            URL::forceScheme('https');
+        }
     }
 }
