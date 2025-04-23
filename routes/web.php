@@ -1,9 +1,10 @@
 <?php
 
-use App\Exports\AttendanceExport;
-use Illuminate\Support\Facades\Route;
 use App\Livewire\Presensi;
+use App\Exports\AttendanceExport;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('presensi', Presensi::class)->name("presensi");
@@ -18,4 +19,7 @@ Route::get('/login', function () {
 
 Route::get('/', function () {
     return redirect('/admin');
+});
+Route::get('/symlink', function () {
+    Artisan::call('storage:link');
 });
