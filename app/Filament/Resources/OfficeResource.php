@@ -72,11 +72,11 @@ class OfficeResource extends Resource
                                         Forms\Components\TextInput::make('latitude')
                                             ->required()
                                             ->numeric()
-                                            ->disabledOn('edit')
+                                            // ->disabledOn('edit')
                                             // ->disabledOn('create')
                                             ->default(-6.2088),
                                         Forms\Components\TextInput::make('longitude')
-                                            ->disabledOn('edit')
+                                            // ->disabledOn('edit')
                                             // ->disabledOn('create')
                                             ->required()
                                             ->numeric()
