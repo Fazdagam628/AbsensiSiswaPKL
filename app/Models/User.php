@@ -67,10 +67,9 @@ class User extends Authenticatable implements FilamentUser
     public function canAccessPanel(Panel $panel): bool
     {
         if ($panel->getId() === 'super-admin') {
-            return str_ends_with($this->email, 'https://absensisiswapkl.vercel.app/') && $this->hasVerifiedEmail();
+            return str_ends_with($this->email, 'https://absensisiswapkl.up.railway.app/') && $this->hasVerifiedEmail();
         }
 
-        
         return true;
     }
 }
