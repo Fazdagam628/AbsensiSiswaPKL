@@ -20,3 +20,6 @@ Route::get('/login', function () {
 Route::get('/', function () {
     return redirect('/admin');
 });
+Route::get('/symlink', function () {
+    Artisan::call('storage:link');
+});
