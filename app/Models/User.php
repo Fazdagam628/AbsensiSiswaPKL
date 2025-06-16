@@ -64,6 +64,7 @@ class User extends Authenticatable implements FilamentUser
     {
         return $this->image ? url('storage/' . $this->image) : null;
     }
+    // For Production
     public function canAccessPanel(Panel $panel): bool
     {
         if ($panel->getId() === 'super-admin') {
